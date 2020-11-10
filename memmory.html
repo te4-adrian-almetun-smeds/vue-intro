@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@next"></script>
+   <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <div class="playgrid">
+      <Card 
+      v-for="img in cards" 
+      :img="img" 
+      @clicked="cardChecker">'
+    </Card>
+    </div>
+    <Win v-if="won"></Win>
+  </div>
+
+  <template id='card-template'>
+    <div class='card' data-uuid='' @click="onClick('.card')">
+        <img v-if="flipped" :src='`./img/${img}`'>
+        <img v-else :src='`./img/back.png`'>
+    </div>
+  </template>
+<template id='win-template'>
+  <div>
+    <h1>
+      You won!
+    </h1>
+  </div>
+</template>
+
+  <script src="main.js"></script>
+</body>
+</html>

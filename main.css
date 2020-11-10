@@ -1,0 +1,12 @@
+body {
+  background-color: peachpuff;
+}
+
+.playgrid {
+  display: grid;
+  grid-template-columns: repeat(6, 150px);
+  column-gap: 20px;
+  grid-template-rows: repeat(4, 152px);
+  row-gap: 20px;
+}
+
